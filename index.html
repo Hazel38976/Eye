@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="眼科医学推理 H5 小游戏：虹膜暗影。调查线索，判断诱因，识别急性闭角型青光眼发作。" />
+<meta property="og:title" content="虹膜暗影｜眼科医学推理小游戏" />
+<meta property="og:description" content="6 次调查机会，找出责任人，判断真正诊断。" />
+<meta property="og:type" content="website" />
+<title>虹膜暗影｜眼科医学推理小游戏</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <div class="badge">眼科医学推理 H5</div>
+    <h1>虹膜暗影</h1>
+    <p class="subtitle">一场术前检查后的急性眼痛事件。你有 6 次调查机会，判断谁触发了危机，以及真正的眼科诊断。</p>
+    <button id="startBtn" class="primary">开始调查</button>
+  </header>
+
+  <main id="game" class="hidden">
+    <section class="panel case">
+      <h2>病例背景</h2>
+      <p>患者：58 岁女性，高度远视，高血压史。近期夜间看灯有彩虹圈，偶有眼胀、头痛。</p>
+      <p>今晚在眼科中心做白内障术前检查后，突然出现剧烈眼痛、头痛、恶心、视力下降，被送急诊。</p>
+      <p class="warning">提示：本案核心不是“谁偷了东西”，而是流程、医学风险和诱发因素。</p>
+    </section>
+
+    <section class="panel">
+      <div class="bar">
+        <h2>调查选项</h2>
+        <span id="counter">剩余 6 次</span>
+      </div>
+      <div id="actions" class="actions"></div>
+    </section>
+
+    <section class="panel">
+      <h2>调查记录</h2>
+      <div id="log" class="log empty">尚未调查。</div>
+    </section>
+
+    <section id="knowledgePanel" class="panel hidden">
+      <h2>已解锁医学知识</h2>
+      <div id="knowledge" class="knowledge"></div>
+    </section>
+
+    <section id="guessArea" class="panel hidden">
+      <h2>最终判断 1：谁最可能直接触发事件？</h2>
+      <div id="suspects" class="actions"></div>
+    </section>
+
+    <section id="diagnosisArea" class="panel hidden">
+      <h2>最终判断 2：患者最可能发生了什么？</h2>
+      <div id="diagnoses" class="actions"></div>
+    </section>
+
+    <section id="result" class="panel result hidden"></section>
+
+    <section class="panel tools">
+      <button id="restartBtn">重新开始</button>
+      <button id="copyBtn">复制分享文案</button>
+    </section>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
